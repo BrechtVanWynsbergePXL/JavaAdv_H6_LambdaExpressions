@@ -9,7 +9,7 @@ public class Document {
 		state = DocumentState.CREATED;
 	}
 
-	public enum DocumentState {
+	public enum  DocumentState {
 		CREATED,
 		ACCEPTED,
 		REJECTED;

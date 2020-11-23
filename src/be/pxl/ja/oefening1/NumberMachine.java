@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class NumberMachine {
 
+	@FunctionalInterface
+	interface NumberFilter{
+		boolean check(int number);
+	}
+
 	private ArrayList<Integer> numbers = new ArrayList<>();
 
 	public NumberMachine(int[] numbers) {
@@ -12,8 +17,6 @@ public class NumberMachine {
 		}
 	}
 
-	/*
-	TODO: uncomment this method after the NumberFilter interface is created.
 	public String processNumbers(NumberFilter filter) {
 		String result = "";
 		for(int i=0;i<numbers.size();i++) {
@@ -26,5 +29,16 @@ public class NumberMachine {
 		}
 		return result;
 	}
-	*/
+
+	public String convertNumbers(){
+		String result = "";
+		for(int i=0;i<numbers.size();i++) {
+			if(!result.equals("")) {
+				result += "-";
+			}
+			result += Integer.toHexString(numbers.get(i));
+		}
+		return result;
+	}
+
 }
